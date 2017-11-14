@@ -59,11 +59,18 @@ const device_select = (done) => {
 const start_server = () => {
   const fs = require('fs');
   const url = require('url');
-  const options = {
-    key: fs.readFileSync('key.pem'),
-    cert: fs.readFileSync('cert.pem')
-  };
-  const app = require('https').createServer(options, handler)
+  const app = (() => {
+    const https = false;
+    if (https) {
+      const options = {
+        key: fs.readFileSync('key.pem'),
+        cert: fs.readFileSync('cert.pem')
+      };
+      return require('https').createServer(options, handler);
+    } else {
+      return require('http').createServer(handler);
+    }
+  })();
   const io = require('socket.io')(app);
 
   app.listen(3030);
@@ -80,7 +87,6 @@ const start_server = () => {
           debug('found devices', devs);
           devices = devs;
           const data = devs.map(x => {
-            debug('item', x);
             return {
               connected: false,
               id: x.id,
@@ -89,7 +95,8 @@ const start_server = () => {
           });
 
           debug('response data', data);
-          res.setHeader('Access-Control-Allow-Origin', req.headers.origin);
+          res.setHeader('Access-Control-Allow-Origin',
+                        req.headers.origin || '*');
           res.setHeader('Access-Control-Request-Method', '*');
           res.setHeader('Access-Control-Allow-Methods', 'OPTIONS, GET');
           res.setHeader('Access-Control-Allow-Headers', '*');
