@@ -12,7 +12,7 @@
     "url": "git+https://github.com/sonyged/koov_scratch_server.git"
   },
   "author": "Sony Global Education, Inc.",
-  "license": "ISC",
+  "license": "SEE LICENSE in ./LICENSE",
   "bugs": {
     "url": "https://github.com/sonyged/koov_scratch_server/issues"
   },
