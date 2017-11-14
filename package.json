@@ -1,0 +1,36 @@
+{
+  "name": "koov_scratch_server",
+  "version": "1.0.0",
+  "description": "device manager for koov device",
+  "main": "index.js",
+  "scripts": {
+    "server": "node ./index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sonyged/koov_scratch_server.git"
+  },
+  "author": "Sony Global Education, Inc.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sonyged/koov_scratch_server/issues"
+  },
+  "homepage": "https://github.com/sonyged/koov_scratch_server#readme",
+  "dependencies": {
+    "async": "^2.4.0",
+    "bilbinary": "git+ssh://git@github.com/sonyged/bilbinary.git",
+    "biltrans": "git+ssh://git@github.com/sonyged/biltrans.git",
+    "device_proxy": "git+ssh://git@github.com/sonyged/device_proxy.git",
+    "koovdev_action": "git+ssh://git@github.com/sonyged/koovdev_action",
+    "koovdev_device": "git+ssh://git@github.com/sonyged/koovdev_device",
+    "koovble": "git+ssh://git@github.com/sonyged/koovble",
+    "koovdev_error": "git+ssh://git@github.com/sonyged/koovdev_error",
+    "koovdev_program": "git+ssh://git@github.com/sonyged/koovdev_program",
+    "avrgirl-stk500v2":
+      "git+ssh://git@github.com/sonyged/avrgirl-stk500v2.git#koov",
+    "firmata": "git+ssh://git@github.com/sonyged/firmata.js.git#koov",
+    "serialport": "git+ssh://git@github.com/sonyged/node-serialport.git#koov-1_0_4",
+    "socket-io-server": "latest"
+  }
+}
