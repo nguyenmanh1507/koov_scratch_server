@@ -7,8 +7,11 @@ A server to control KOOV Core from scratch.
 * npm run server
 
 The server will listen on localhost:3030.
-The server will return all found device by default, but you can
-restrict it only to usb connected device by passing --usb-only option.
+The server will return all found devices by default.
+Since there seems to be no UI in scratch 3.0 GUI to select one of them,
+it is highly difficult to predict which device will be used.
+You can restrict the found device only to usb connected device
+by passing --usb-only option.
 ```
 $ npm run server -- --usb-only
 ```
