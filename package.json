@@ -21,14 +21,14 @@
     "async": "^2.4.0",
     "bilbinary": "https://github.com/sonyged/bilbinary.git",
     "biltrans": "https://github.com/sonyged/biltrans.git",
+    "debug": "latest",
     "device_proxy": "https://github.com/sonyged/device_proxy.git",
     "koovdev_action": "https://github.com/sonyged/koovdev_action",
     "koovdev_device": "https://github.com/sonyged/koovdev_device",
     "koovble": "https://github.com/sonyged/koovble",
     "koovdev_error": "https://github.com/sonyged/koovdev_error",
     "koovdev_program": "https://github.com/sonyged/koovdev_program",
-    "avrgirl-stk500v2":
-      "https://github.com/sonyged/avrgirl-stk500v2.git#koov",
+    "avrgirl-stk500v2": "https://github.com/sonyged/avrgirl-stk500v2.git#koov",
     "firmata": "https://github.com/sonyged/firmata.js.git#koov",
     "serialport": "https://github.com/sonyged/node-serialport.git#koov-1_0_4",
     "socket-io-server": "latest"
