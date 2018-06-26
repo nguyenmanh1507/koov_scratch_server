@@ -7,3 +7,8 @@ A server to control KOOV Core from scratch.
 * npm run server
 
 The server will listen on localhost:3030.
+The server will return all found device by default, but you can
+restrict it only to usb connected device by passing --usb-only option.
+```
+$ npm run server -- --usb-only
+```
