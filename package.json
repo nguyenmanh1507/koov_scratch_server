@@ -1,6 +1,6 @@
 {
   "name": "koov_scratch_server",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "device manager for koov device",
   "main": "index.js",
   "scripts": {

@@ -25,8 +25,21 @@
 
 "use strict";
 
-let debug = require('debug')('koov_scratch_server');
+const debug = require('debug')('koov_scratch_server');
 const async = require('async');
+
+const argv = process.argv.slice(2);
+const { https, usb_only } = argv.reduce((acc, x) => {
+  switch (x) {
+  case '--https': acc.https = true; break;
+  case '--usb-only': acc.usb_only = true; break;
+  default: throw Error(`Unkown option: ${x}`); break;
+  }
+  return acc;
+}, {
+  https: false,
+  usb_only: false
+});
 
 const { scratch3_sprite, scratch3_translate } = require('./scr3conv.js');
 
@@ -82,7 +95,6 @@ const start_server = () => {
   const fs = require('fs');
   const url = require('url');
   const app = (() => {
-    const https = false;
     if (https) {
       const options = {
         key: fs.readFileSync('key.pem'),
@@ -108,7 +120,9 @@ const start_server = () => {
         device.list((devs) => {
           debug('found devices', devs);
           devices = devs;
-          const data = devs.map(x => {
+          const data = devs.filter(x => {
+            return usb_only ? x.type === 'usb' : true;
+          }).map(x => {
             return {
               connected: false,
               id: x.id,
